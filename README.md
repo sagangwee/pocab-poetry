@@ -7,6 +7,7 @@ To get up and running, simply do the following:
     # Install the requirements
     $ pip install -r requirements.txt
 
-    # Perform database migrations
-    $ python manage.py makemigrations
-    $ python manage.py migrate
+    # Start the server
+    $ python manage.py runserver
+
+Then go to [http://localhost:8000](http://localhost:8000)
