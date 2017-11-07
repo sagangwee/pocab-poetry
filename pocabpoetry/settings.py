@@ -119,8 +119,8 @@ USE_TZ = True
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 PROJECT_DIR = os.path.join(PROJECT_ROOT,'poetry')
-STATIC_URL = os.path.join(PROJECT_DIR,'static/')
+STATIC_URL = '/static/'
 STATIC_ROOT= os.path.join(PROJECT_DIR,'staticfiles/')
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT,'static/'),
+    os.path.join(PROJECT_DIR,'static/'),
 )
