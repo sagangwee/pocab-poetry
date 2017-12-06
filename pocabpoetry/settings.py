@@ -27,7 +27,7 @@ SECRET_KEY = 'p&(ro311boq4blo#@ovm92e^^1h6w#$k+x*za_w^l(!o)v+0!-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'pocab-poetry.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'pocab-poetry.herokuapp.com']
 
 
 # Application definition

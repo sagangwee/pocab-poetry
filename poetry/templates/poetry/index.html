@@ -8,6 +8,35 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 </head>
 <body>
-	<h1>Hello World!</h1>
+	<header class="header">
+		<h2>POCAB Final Project</h2>
+	</header>
+	<div class="title">
+		<form type="post" action="/">
+			<h4>Randomly Generated Poetry</h4>
+			<p>Generated from
+				<select name="corpus">
+					<option value={{corpus}} selected disabled hidden>{{corpus}}</option>
+					{% for option in corpus_options %}
+						<option value={{option}}>{{option}}</option>
+					{% endfor %}
+				</select>
+				<input type="submit" class="button" value="Change">
+			</p>
+		</form>
+	</div>
+	<div class="poem">
+		<h3> {{title}} </h3>
+		{% for line in poem %}
+			{% for word in line %}
+				{{word}}
+			{% endfor %}
+			<p></p>
+		{% endfor %}
+	</div>
+	<div class="new">
+		<a class="button" href="/?corpus={{corpus}}"> Generate a new one</a>
+	</div>
+
 </body>
 </html>
