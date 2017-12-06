@@ -14,7 +14,7 @@ Then go to [http://localhost:8000](http://localhost:8000)
 
 ```
 # To activate virtualenv
-$ source my_project/bin/activate
+$ source my_project/Scripts/activate
 ```
 
 ```
