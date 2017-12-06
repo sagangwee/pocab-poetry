@@ -11,3 +11,13 @@ To get up and running, simply do the following:
     $ python manage.py runserver
 
 Then go to [http://localhost:8000](http://localhost:8000)
+
+```
+# To activate virtualenv
+$ source my_project/bin/activate
+```
+
+```
+# To save pip packages in requirements
+$ pip freeze > requirements.txt
+```
