@@ -1,8 +1,9 @@
-from Posey import reverseNgrams, setupModel, generateCouplet, poemProcessing, printPoem
-from nltk.corpus import gutenberg
+from Posey import reverseNgrams, setupModel, generateCouplet, poemProcessing
+from nltk.corpus import gutenberg, wordnet as wn
 import json
 import string
 import os
+import random
 
 def generate_n_gram(corpus):
     # In this example I'm using a corpus from NLTK - Gutenburg Project
@@ -32,18 +33,33 @@ def generate_n_gram(corpus):
     with open(corpus+'.json', 'w') as outfile:
         json.dump(model, outfile)
 
+def generate_synonym_title(title):
+    synsets = wn.synsets(title)
+    synonyms = []
+    for synst in synsets:
+        for word in synst.lemma_names():
+            synonyms.append(word)
+    if len(synonyms) == 0:
+        return title.title()
+    new_title = synonyms[random.randint(0, len(synonyms) - 1)]
+    count = len(synonyms)
+    while new_title == title and count > 0:
+        new_title = synonyms[random.randint(0, len(synonyms) - 1)]
+        count -=1
+    return new_title.title()
+
 def generate_poem(corpus_input):
     with open(corpus_input+'.json', 'r') as infile:
         corpus = json.load(infile)
     os.remove(corpus_input+'.json')
     # This will generate a couplet - AABB CCDD EEFF GGHH
     # With 8 lines, 10 words each line
-    poem = generateCouplet(corpus, 8, 10)
+    poem, title = generateCouplet(corpus, 8, 10)
+
+    title = generate_synonym_title(title)
 
     # Handles capitilization and formatting
     poemProcessing(poem)
 
-    # Short function to print to console
-    # printPoem(poem)
 
-    return poem
+    return poem, title

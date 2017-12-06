@@ -118,6 +118,7 @@ def findRhyme(word, corpus):
 def generateCouplet(corpus, lines, wordsPerLine):
     firstWords = getFirstWords(corpus)
     poem = []
+    title = None
     for i in xrange(lines):
         line = []
         if i % 2 == 0:
@@ -126,7 +127,8 @@ def generateCouplet(corpus, lines, wordsPerLine):
                 AA = findRhyme(A, corpus)
                 if AA != None:
                     break
-
+            if title == None:
+                title = A
             first = A
             second = findSecond(first, corpus, firstWords)
             line += [first, second]
@@ -140,7 +142,8 @@ def generateCouplet(corpus, lines, wordsPerLine):
             first, second = addWord(line, first, second, corpus, firstWords)
 
         poem.append(line[::-1])
-    return poem
+
+    return poem, title
 
 
 # Handles capitalization lost from pre-processing
@@ -152,11 +155,3 @@ def poemProcessing(poem):
                 line[index] = word[0:2].upper() + word[2:]
             if word == 'i':
                 line[index] = word.upper()
-
-
-# Prints poem line by line
-def printPoem(poem):
-    for line in poem:
-        for word in line:
-            print word,
-        print
