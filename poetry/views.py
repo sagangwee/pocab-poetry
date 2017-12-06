@@ -7,6 +7,7 @@ def index(request):
         if corpus == "":
         	corpus = 'shakespeare-macbeth.txt'
     except Exception as e:
+        print e
         corpus = 'shakespeare-macbeth.txt'
     corpus_options = ['austen-emma.txt', 'austen-persuasion.txt', 'austen-sense.txt', 'bible-kjv.txt',
         'blake-poems.txt', 'bryant-stories.txt', 'burgess-busterbrown.txt',
