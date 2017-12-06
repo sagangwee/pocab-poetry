@@ -1,0 +1,49 @@
+from Posey import reverseNgrams, setupModel, generateCouplet, poemProcessing, printPoem
+from nltk.corpus import gutenberg
+import json
+import string
+import os
+
+def generate_n_gram(corpus):
+    # In this example I'm using a corpus from NLTK - Gutenburg Project
+    # Sara Bryant - Stories to Tell to Children
+    sentences = gutenberg.sents(corpus)
+
+    # Process text and collect reverse N-grams sentence by sentence
+    # Do not do this word by word or you'll have incoherent N-grams that span sentences
+    def processText(sentence):
+        tokens = []
+        for word in sentence:
+            valid = True
+            for c in word:
+                if c in string.punctuation:
+                    valid = False
+            if valid:
+                tokens.append(word.lower())
+        return tokens
+    ngrams = []
+    for sentence in sentences:
+        tokens = processText(sentence)
+        ngrams += reverseNgrams(tokens, 3)
+
+    # print string.punctuation
+    model = setupModel(ngrams)
+
+    with open(corpus+'.json', 'w') as outfile:
+        json.dump(model, outfile)
+
+def generate_poem(corpus_input):
+    with open(corpus_input+'.json', 'r') as infile:
+        corpus = json.load(infile)
+    os.remove(corpus_input+'.json')
+    # This will generate a couplet - AABB CCDD EEFF GGHH
+    # With 8 lines, 10 words each line
+    poem = generateCouplet(corpus, 8, 10)
+
+    # Handles capitilization and formatting
+    poemProcessing(poem)
+
+    # Short function to print to console
+    # printPoem(poem)
+
+    return poem

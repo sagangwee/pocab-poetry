@@ -1,3 +1,84 @@
-h1 {
-	color: blue;
+/*Style to reset*/
+/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}*/
+
+h2 {
+	/*margin: 0px;*/
+/*	line-height:100%;
+*/}
+
+body {
+    display: block;
+    margin: 0px;
+    text-align: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    /*background: #ecf0f1*/
+ }
+
+
+.header {
+	/*border-bottom: 1px solid black;*/
+	/*background: #bdc3c7 no-repeat right top;*/
+	background: #fafafb no-repeat right top;
+	height: 60px;
+	/*background-color: red;*/
+	box-sizing: border-box;
+	border-top: 3px solid #3498db;
+	box-shadow: 0 1px 0 rgba(12,13,14,0.15), 0 0 0 transparent, 0 0 0 transparent, 0 0 0 transparent;
+
+}
+
+.title {
+    margin-bottm: 20px;
+}
+
+.poem {
+   	display: inline-block;
+   	padding: 18px;
+   	/*background: #efffff;*/
+    border-bottom: 1px solid #e4e6e8;
+   	border-top: 1px solid #e4e6e8;
+   	margin-bottom: 10px;
+}
+
+.button {
+    /*font-weight: normal;*/
+    /*background: none;*/
+    /*border: 1px solid transparent;*/
+    border-radius: 2px;
+    box-shadow: none;
+    color: #FFF;
+    background-color: #0095ff;
+    border: 1px solid #07c;
+    box-shadow: inset 0 1px 0 #66bfff;
+    padding: .61538462em 1em;
+    /*text-decoration-line: none;*/
+}
+
+.title .button {
+	margin-left: 4px;
+}
+
+
+.new {
+	margin-top: 16px;
+}
+
+
+a {
+	color:#07C;
+	text-decoration:none;
+	cursor:pointer;
+}
+
+a:hover,a:active{
+    /*opacity:.3;*/
+	color:#3af;
+	text-decoration:none;
 }
