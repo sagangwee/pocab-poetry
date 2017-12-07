@@ -1,10 +1,11 @@
 from scripts.Posey import reverseNgrams, setupModel, generateCouplet, poemProcessing
 import nltk
-from nltk.corpus import gutenberg, wordnet as wn
+from nltk.corpus import gutenberg, PlaintextCorpusReader, wordnet as wn
 import json
 import string
-import os
+import glob, os
 import random
+import nltk.data
 
 # nltk.download('gutenberg')
 # nltk.download('punkt')
@@ -12,8 +13,10 @@ import random
 
 def generate_n_gram(corpus):
     # In this example I'm using a corpus from NLTK - Gutenburg Project
-    # Sara Bryant - Stories to Tell to Children
-    sentences = gutenberg.sents(corpus)
+    # Sara Bryant - Stories to Tell to
+    path = "./corpora/" + corpus
+    reader = PlaintextCorpusReader(path, '.*\.txt')
+    sentences = reader.sents()
 
     # Process text and collect reverse N-grams sentence by sentence
     # Do not do this word by word or you'll have incoherent N-grams that span sentences
