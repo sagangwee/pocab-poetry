@@ -6,9 +6,9 @@ import string
 import os
 import random
 
-# nltk.download('gutenberg')
-# nltk.download('punkt')
-# nltk.download('wordnet')
+nltk.download('gutenberg')
+nltk.download('punkt')
+nltk.download('wordnet')
 
 def generate_n_gram(corpus):
     # In this example I'm using a corpus from NLTK - Gutenburg Project

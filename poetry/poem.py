@@ -5,6 +5,8 @@ import string
 import os
 import random
 
+nltk.download('gutenberg')
+
 def generate_n_gram(corpus):
     # In this example I'm using a corpus from NLTK - Gutenburg Project
     # Sara Bryant - Stories to Tell to Children
