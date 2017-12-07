@@ -16,6 +16,13 @@ body {
     /*background: #ecf0f1*/
  }
 
+.poem-body h3 {
+    margin-bottom: 8px;
+}
+.poem-body h4 {
+    margin-top: 0px;
+    margin-bottom: 12px;
+}
 
 .header {
 	/*border-bottom: 1px solid black;*/
@@ -91,6 +98,8 @@ body {
 
 #result {
     display: none;
+    margin-top: 6px;
+    font-weight: bold;
 }
 .title .button {
 	margin-left: 4px;

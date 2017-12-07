@@ -17,8 +17,8 @@
 	</div>
 	<div class="poem-body">
 		<div class="poem">
-			<h3> {{data.title}} </h3>
-			<h4 id="author"> {{data.author}}</h4>
+			<h3>{{data.title}} </h3>
+			<h4 id="author">  by {{data.author}}</h4>
 			<div class="text">
 				{% for line in data.poem %}
 					{% for word in line %}
@@ -42,8 +42,11 @@
     var author = document.getElementById("author");
     if (vote === "{{data.author}}"){
     	result.textContent="Correct!";
+    	result.style.color="#5cb85c";
+
     } else {
     	result.textContent="Wrong!";
+    	result.style.color="#d9534f";
     }
     result.style.display = "block";
     author.style.display= "block";
