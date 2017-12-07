@@ -1,6 +1,7 @@
 from scripts.Posey import reverseNgrams, setupModel, generateCouplet, poemProcessing
 import nltk
 from nltk.corpus import gutenberg, PlaintextCorpusReader, wordnet as wn
+from nltk.tokenize import WhitespaceTokenizer
 import json
 import string
 import glob, os
@@ -15,7 +16,7 @@ def generate_n_gram(corpus):
     # In this example I'm using a corpus from NLTK - Gutenburg Project
     # Sara Bryant - Stories to Tell to
     path = "./corpora/" + corpus
-    reader = PlaintextCorpusReader(path, '.*\.txt')
+    reader = PlaintextCorpusReader(path, '.*\.txt', WhitespaceTokenizer())
     sentences = reader.sents()
 
     # Process text and collect reverse N-grams sentence by sentence
@@ -25,7 +26,7 @@ def generate_n_gram(corpus):
         for word in sentence:
             valid = True
             for c in word:
-                if c in string.punctuation:
+                if c in string.punctuation and c != "'":
                     valid = False
             if valid:
                 tokens.append(word.lower())
