@@ -27,12 +27,14 @@
 	</div>
 	<div class="poem">
 		<h3> {{title}} </h3>
-		{% for line in poem %}
-			{% for word in line %}
-				{{word}}
+		<div class="text">
+			{% for line in poem %}
+				{% for word in line %}
+					{{word}}
+				{% endfor %}
+				<p></p>
 			{% endfor %}
-			<p></p>
-		{% endfor %}
+		</div>
 	</div>
 	<div class="new">
 		<a class="button" href="/?corpus={{corpus}}"> Generate a new one</a>

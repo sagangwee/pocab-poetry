@@ -42,6 +42,9 @@ body {
     padding-bottom: 12px;
 }
 
+.poem .text {
+  font-style: italic;
+}
 
 .button {
     /*font-weight: normal;*/
@@ -61,11 +64,9 @@ body {
 	margin-left: 4px;
 }
 
-
 .new {
 	margin-top: 16px;
 }
-
 
 a {
 	color:#07C;

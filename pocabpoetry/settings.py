@@ -20,7 +20,6 @@ PROJECT_DIR = os.path.join(PROJECT_ROOT,'../poetry')
 
 sys.path.append(os.path.join(PROJECT_DIR))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
