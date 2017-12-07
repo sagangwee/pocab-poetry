@@ -59,7 +59,7 @@ def generate_synonym_title(title):
 def generate_poem(corpus_input):
     with open(corpus_input+'.json', 'r') as infile:
         corpus = json.load(infile)
-    os.remove(corpus_input+'.json')
+    # os.remove(corpus_input+'.json')
     # This will generate a couplet - AABB CCDD EEFF GGHH
     # With 8 lines, 10 words each line
     poem, title = generateCouplet(corpus, 8, 10)

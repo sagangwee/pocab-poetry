@@ -16,10 +16,11 @@
 		<p>Generated from Obama and Trump speeches</p>
 	</div>
 	<div class="poem-body">
-		<div class="poem-president-left">
-			<h3> {{obama_title}} </h3>
+		<div class="poem">
+			<h3> {{data.title}} </h3>
+			<h4 id="author"> {{data.author}}</h4>
 			<div class="text">
-				{% for line in obama_poem %}
+				{% for line in data.poem %}
 					{% for word in line %}
 						{{word}}
 					{% endfor %}
@@ -27,20 +28,26 @@
 				{% endfor %}
 			</div>
 		</div>
-		<div class="poem-president-right">
-			<h3> {{trump_title}} </h3>
-			<div class="text">
-				{% for line in trump_poem %}
-					{% for word in line %}
-						{{word}}
-					{% endfor %}
-					<p></p>
-				{% endfor %}
-			</div>
+		<div class="vote">
+			<button onclick="toggleVote('Obama')" class="obama-button" ></button>
+			<a class="button" href="/"> Generate a new one</a>
+			<button onclick="toggleVote('Trump')" class="trump-button" value="trump"> </button>
 		</div>
-		<div class="new">
-			<a class="button" href="/?corpus={{corpus}}"> Generate a new one</a>
-		</div>
+		<div id="result"></div>
 	</div>
+
+<script type="text/javascript">
+	function toggleVote(vote) {
+    var result = document.getElementById("result");
+    var author = document.getElementById("author");
+    if (vote === "{{data.author}}"){
+    	result.textContent="Correct!";
+    } else {
+    	result.textContent="Wrong!";
+    }
+    result.style.display = "block";
+    author.style.display= "block";
+}
+</script>
 </body>
 </html>

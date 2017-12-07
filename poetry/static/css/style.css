@@ -36,24 +36,17 @@ body {
     display: inline-block;
     /*background: #efffff;*/
     /*border-bottom: 1px solid #e4e6e8;*/
-    /*border-top: 1px solid #e4e6e8;*/
     margin-bottom: 12px;
     padding-bottom: 12px;
     width: 100%
 }
 
 
-.poem-president-left{
-    width: 50%;
-    border-right: 1px solid #e4e6e8;
+.poem{
+    border-top: 1px solid #e4e6e8;
     /*margin-right: 10px;*/
-    float:left;
 }
-.poem-president-right{
-    margin-left:50%;
-    width: 50%;
-    /*margin-left: 10px;*/
-}
+
 
 .poem .text {
   font-style: italic;
@@ -69,16 +62,51 @@ body {
     background-color: #0095ff;
     border: 1px solid #07c;
     box-shadow: inset 0 1px 0 #66bfff;
-    padding: .61538462em 1em;
+    padding: .61538462em;
+    height: 20px;
     /*text-decoration-line: none;*/
 }
 
+
+.obama-button {
+    background-image: url('../img/obama.png');
+    background-repeat: no-repeat;
+    background-size: 100%; 
+    width: 50px;
+    height: 50px;
+}
+
+
+.trump-button {
+    background-image: url('../img/trump.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+#author {
+    display: none;
+}
+
+#result {
+    display: none;
+}
 .title .button {
 	margin-left: 4px;
 }
 
 .new {
-	padding-top: 16px;
+	/*padding-top: 16px;*/
+}
+
+
+.vote {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
 }
 
 a {
