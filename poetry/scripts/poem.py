@@ -55,7 +55,9 @@ def generate_synonym_title(title):
     while new_title == title and count > 0:
         new_title = synonyms[random.randint(0, len(synonyms) - 1)]
         count -=1
-    return new_title.title()
+    new_title = new_title.title()
+    new_title = new_title.replace("_", " ")
+    return new_title
 
 def generate_poem(corpus_input):
     with open(corpus_input+'.json', 'r') as infile:
