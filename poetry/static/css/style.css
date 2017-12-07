@@ -51,7 +51,9 @@ body {
 
 .poem{
     border-top: 1px solid #e4e6e8;
-    /*margin-right: 10px;*/
+    /*width: 100%;*/
+/*    border-bottom: 1px solid #e4e6e8;
+*/    /*margin-right: 10px;*/
 }
 
 
@@ -74,6 +76,12 @@ body {
     /*text-decoration-line: none;*/
 }
 
+.vote-container {
+    border-top: 1px solid #e4e6e8;
+    margin: 0 auto;
+    margin-top: 24px;
+    width: 400px;
+}
 
 .obama-button {
     background-image: url('../img/obama.png');
